@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     DatabaseReference getDbRef = FirebaseDatabase.getInstance().getReference().child("Student");
-
     public void onDataChange(DataSnapshot dataSnapshot) {
         try {
             if (TextUtils.isEmpty(txtID.getText().toString()))
@@ -74,10 +73,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    DatabaseReference readDbRef = FirebaseDatabase.getInstance().getReference().child("Student").child("Std1");
-    raedRef.addListenerForStrigleValueEvent(new ValueEventListener)
 
-    {
+
+
+
+    DatabaseReference readDbRef = FirebaseDatabase.getInstance().getReference().child("Student").child("Std1");
+    raedRef.addListenerForStrigleValueEvent(new ValueEventListener){
         public void onDataChange (DataSnapshot dataSnapshot){
         if (datSnapshot.hasChildren()) {
             txtID.setText(dataSnapshot.child("id").getValue().toString());
@@ -88,18 +89,18 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "No source to display ", Toast.LENGTH_SHORT).show();
     }
         public void onCancelled (DatabaseError databaseError){
+    }
+    }
 
-    }
-    }
+
+
+
 
 
     DatabaseReference updRef = FirebaseDatabase.getInstance().getReference().child("Student");
-     updRef.addListenerForStrigleValueEvent(new ValueEventListener)
-
-    {
+     updRef.addListenerForStrigleValueEvent(new ValueEventListener){
         public void onDataChange (DataSnapshot dataSnapshot){
         if (datSnapshot.hasChildren("Std1")) {
-
             try {
 
                 std.setID(txtID.getText().toString().trim());
@@ -116,16 +117,16 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 Toast.makeText(getApplicationContext(), "Invalid Contact Number ", Toast.LENGTH_SHORT).show();
             }
-
         }
-    }
-    }
+    } }
+
+
+
+
 
 
     DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("Student");
-     delRef.addListenerForStrigleValueEvent(new ValueEventListener)
-
-    {
+     delRef.addListenerForStrigleValueEvent(new ValueEventListener){
         public void onDataChange (DataSnapshot dataSnapshot){
         if (datSnapshot.hasChildren("Std1")) {
 
@@ -138,11 +139,8 @@ public class MainActivity extends AppCompatActivity {
         } else
             Toast.makeText(getApplicationContext(), "No source to delete ", Toast.LENGTH_SHORT).show();
     }
-
         public void onCancelled (DatabaseError databaseError){
-
-    }
-    }
+    } }
 
 }
 
