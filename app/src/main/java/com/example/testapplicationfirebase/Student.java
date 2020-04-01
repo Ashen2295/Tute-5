@@ -1,11 +1,13 @@
 package com.example.testapplicationfirebase;
 
 public class Student {
-
     private String ID;
     private String name;
     private String address;
-    private String conNo;
+    private Integer conNo;
+
+    public Student() {
+    }
 
     public String getID() {
         return ID;
@@ -31,14 +33,11 @@ public class Student {
         this.address = address;
     }
 
-    public String getConNo() {
+    public Integer getConNo() {
         return conNo;
     }
 
-    public void setConNo(String conNo) {
+    public void setConNo(Integer conNo) {
         this.conNo = conNo;
-    }
-
-    public Student() {
     }
 }
